@@ -1,0 +1,16 @@
+{
+  "short_name": "Loginest",
+  "name": "Loginest Logistics Platform",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B132B",
+  "theme_color": "#FF6B00",
+  "display": "standalone",
+  "description": "Global Smart Supply Chain & Freight Management Platform"
+}

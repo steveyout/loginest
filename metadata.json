@@ -1,0 +1,6 @@
+{
+  "name": "Loginest Logistics",
+  "description": "Next-generation smart supply chain and global freight management platform featuring real-time tracking, instant shipping rate calculator, waybill label generator, and fleet analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

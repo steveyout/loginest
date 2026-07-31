@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom Gradients & Glows for Loginest Brand (Orange & Dark Blue) */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #FF6B00 0%, #E05300 50%, #1E3A8A 100%);
+}
+
+/* Cross-browser gradient text helpers without box clipping glitches */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8A00 50%, #E05300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-orange-emerald {
+  background: linear-gradient(135deg, #FF6B00 0%, #F59E0B 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.bg-gradient-dark-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.15) 0%, rgba(15, 23, 42, 0.95) 70%), #070C18;
+}
+
+.bg-gradient-light-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.12) 0%, rgba(241, 245, 249, 1) 75%), #F8FAFC;
+}
+
+.glow-orange {
+  box-shadow: 0 0 25px -5px rgba(255, 107, 0, 0.4);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px -5px rgba(30, 58, 138, 0.4);
+}
+
+.border-glow-orange {
+  border-color: rgba(255, 107, 0, 0.4);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.15);
+}
+
+/* Glassmorphism effects */
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 5s ease infinite;
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 0, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 0, 0.6);
+}
+
