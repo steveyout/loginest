@@ -64,7 +64,7 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build SPA Output
         run: npm run build
