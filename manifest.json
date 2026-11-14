@@ -1,0 +1,17 @@
+{
+  "short_name": "Loginest",
+  "name": "Loginest Logistics Africa",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#06122E",
+  "theme_color": "#FF5500",
+  "display": "standalone",
+  "description": "Reliable Freight, Global Reach & End-to-End Agility across Eastern Africa and 120+ countries"
+}
