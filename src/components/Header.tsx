@@ -80,14 +80,14 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/95 dark:bg-[#06122e]/95 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4">
         
         {/* Brand Logo with Official Uploaded Emblem */}
         <div 
           onClick={() => handleNavClick('overview')} 
-          className="flex items-center gap-3 cursor-pointer group select-none shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group select-none shrink-0"
         >
-          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl overflow-hidden bg-[#06122e] border border-slate-700 shadow-sm group-hover:scale-105 transition-all duration-300 flex items-center justify-center p-1">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden bg-[#06122e] border border-slate-700 shadow-sm group-hover:scale-105 transition-all duration-300 flex items-center justify-center p-1 shrink-0">
             <img 
               src={logoImg} 
               alt="Loginest Logistics Official Logo" 
@@ -97,12 +97,12 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-wider text-slate-900 dark:text-white uppercase leading-none">
+              <span className="font-display font-extrabold text-lg sm:text-2xl tracking-wider text-slate-900 dark:text-white uppercase leading-none">
                 LOGINEST
               </span>
             </div>
             <div className="h-[2px] w-full bg-orange-500 rounded-full my-1" />
-            <p className="text-[10px] sm:text-[11px] tracking-[0.25em] text-slate-500 dark:text-slate-400 font-bold uppercase leading-none">
+            <p className="text-[9px] sm:text-[11px] tracking-[0.25em] text-slate-500 dark:text-slate-400 font-bold uppercase leading-none">
               LOGISTICS
             </p>
           </div>
@@ -229,13 +229,13 @@ export const Header: React.FC<HeaderProps> = ({
 
         </nav>
 
-        {/* Right Actions: Get a Quote CTA + Theme Toggle */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Right Actions: Get a Quote CTA (Desktop) + Theme Toggle + Mobile Menu Hamburger */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           
-          {/* Get a Quote Button */}
+          {/* Get a Quote Button - Hidden on mobile screens to prevent overflow, housed cleanly in mobile menu */}
           <button
             onClick={() => handleNavClick('quote')}
-            className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white shadow-sm hover:scale-102 active:scale-98 transition-all cursor-pointer"
+            className="hidden md:flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white shadow-sm hover:scale-102 active:scale-98 transition-all cursor-pointer"
           >
             <Calculator className="w-4 h-4 text-white" />
             <span>Get a Quote</span>
@@ -246,21 +246,22 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className="p-2.5 rounded-xl bg-slate-100 dark:bg-[#0a193d] text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 border border-slate-200 dark:border-slate-800 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-[#0a193d] text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 border border-slate-200 dark:border-slate-800 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0"
           >
             {theme === 'dark' ? (
-              <Sun className="w-5 h-5 text-amber-400" />
+              <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
             ) : (
-              <Moon className="w-5 h-5 text-indigo-600" />
+              <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
             )}
           </button>
 
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-[#0a193d] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 cursor-pointer"
+            aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+            className="lg:hidden p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-[#0a193d] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 cursor-pointer shrink-0"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
 
         </div>
@@ -273,31 +274,56 @@ export const Header: React.FC<HeaderProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-[#06122e] border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-2 max-h-[80vh] overflow-y-auto"
+            className="lg:hidden bg-white dark:bg-[#06122e] border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-3 max-h-[85vh] overflow-y-auto"
           >
-            {[
-              { id: 'overview', label: 'Home', icon: Globe },
-              { id: 'about', label: 'About Our Company', icon: Building2 },
-              { id: 'services', label: 'Our 6 Core Services', icon: Layers },
-              { id: 'regional-footprint', label: 'Regional Footprint (6 Hubs + 120 Countries)', icon: MapPin },
-              { id: 'memberships', label: 'Our Memberships & Certifications', icon: ShieldCheck },
-              { id: 'quote', label: 'Get a Personalized Quote', icon: Calculator },
-              { id: 'contact', label: 'Contact Us (Nairobi Bellway HQ)', icon: PhoneCall },
-              { id: 'faq', label: 'Customs & Port Shipping FAQ', icon: HelpCircle }
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center gap-3 transition-colors ${
-                  activeTab === item.id 
-                    ? 'bg-orange-500 text-white shadow-xs' 
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
+            {/* Prominent Mobile Get a Quote CTA Button */}
+            <button
+              onClick={() => handleNavClick('quote')}
+              className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-bold bg-orange-500 hover:bg-orange-600 text-white shadow-md active:scale-98 transition-all cursor-pointer"
+            >
+              <Calculator className="w-5 h-5 text-white" />
+              <span>Get an Instant Quote</span>
+              <ArrowRight className="w-4 h-4 opacity-90" />
+            </button>
+
+            {/* Navigation Links */}
+            <div className="space-y-1 pt-1 border-t border-slate-200 dark:border-slate-800">
+              {[
+                { id: 'overview', label: 'Home', icon: Globe },
+                { id: 'about', label: 'About Our Company', icon: Building2 },
+                { id: 'services', label: 'Our 6 Core Services', icon: Layers },
+                { id: 'regional-footprint', label: 'Regional Footprint (6 Hubs + 120 Countries)', icon: MapPin },
+                { id: 'memberships', label: 'Our Memberships & Certifications', icon: ShieldCheck },
+                { id: 'quote', label: 'Quote & Freight Tariff Calculator', icon: Calculator },
+                { id: 'contact', label: 'Contact Us (Nairobi Bellway HQ)', icon: PhoneCall },
+                { id: 'faq', label: 'Customs & Port Shipping FAQ', icon: HelpCircle }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-3 transition-colors ${
+                    activeTab === item.id 
+                      ? 'bg-orange-500 text-white shadow-xs' 
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  }`}
+                >
+                  <item.icon className="w-4 h-4 shrink-0" />
+                  <span>{item.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Direct WhatsApp Callout in Mobile Menu */}
+            <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
+              <a
+                href="https://wa.me/254728346457?text=Hello%20Loginest%20Logistics%2C%20I%20need%20assistance%20with%20a%20freight%20shipment."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-600/20 transition-colors"
               >
-                <item.icon className="w-5 h-5 shrink-0" />
-                <span>{item.label}</span>
-              </button>
-            ))}
+                <span>WhatsApp Operations: +254 728 346457</span>
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

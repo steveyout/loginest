@@ -80,7 +80,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#06122e] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#FF5500] selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-slate-50 text-slate-900 dark:bg-[#06122e] dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-[#FF5500] selection:text-white">
       <ScrollProgress />
       <Header 
         activeTab={activeTab} 
@@ -89,7 +89,7 @@ export default function App() {
         toggleTheme={toggleTheme} 
       />
 
-      <main className="flex-1">
+      <main className="flex-1 w-full overflow-x-hidden">
         <AnimatePresence mode="wait">
           
           {/* Master Landing Page / Overview */}
@@ -150,12 +150,12 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Our Services •"
-                gradientTitle="Engineered for Precision"
-                description="Explore our specialized suite: Trucking & Commercial Distribution, NVOCC & Consolidation, 45-Year AOG Aviation Logistics, Out-of-Gauge Project Rigging, Freight Forwarding, and Customs Clearance."
-                category="Operations Suite"
+                title="6 Specialized Capabilities •"
+                gradientTitle="Global Freight Solutions"
+                description="Audited freight forwarding solutions for enterprise cargo, urgent aviation components, and cross-border commercial transport across East Africa and worldwide trade lanes."
+                category="Logistics Services"
                 icon={Layers}
-                badgeText="Services"
+                badgeText="KRA Simba / KPA Gate 18"
                 setActiveTab={handleTabChange}
               />
               <ServicesSection setActiveTab={handleTabChange} />
@@ -174,17 +174,17 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Eastern Africa Hubs &"
-                gradientTitle="Global Network in 120+ Countries"
-                description="Headquartered at Bellway Business Park in Nairobi, with operational branches in Mombasa, Uganda, Rwanda, Tanzania, Nigeria, and South Sudan."
-                category="Regional Footprint"
+                title="Strategic Logistics Footprint •"
+                gradientTitle="6 Hubs in East Africa"
+                description="Headquartered at Bellway Business Park Nairobi, operating across Mombasa Port Gate 18, Uganda, Rwanda, Tanzania, Nigeria, and South Sudan with 120+ global partner nations."
+                category="Geographic Reach"
                 icon={MapPin}
-                badgeText="6 Hubs • 120+ Nations"
+                badgeText="Bellway Business Park Nairobi"
                 setActiveTab={handleTabChange}
               />
               <RegionalFootprintSection setActiveTab={handleTabChange} />
-              <StatisticsSection setActiveTab={handleTabChange} />
-              <QuoteSection setActiveTab={handleTabChange} />
+              <HowItWorksSection setActiveTab={handleTabChange} />
+              <ContactSupport setActiveTab={handleTabChange} />
             </motion.div>
           )}
 
@@ -198,12 +198,12 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Our Memberships &"
-                gradientTitle="Regulatory Accreditations"
-                description="Full certified compliance with KIFWA, FIATA, WCA, Kenya Ports Authority Gate 18 direct integration, KRA Authorized Economic Operator (AEO Green Lane), and IATA Cargo Agent standards."
-                category="Accreditation & Trust"
+                title="Audited Compliance •"
+                gradientTitle="Recognized Memberships"
+                description="Fully licensed and certified by KIFWA, FIATA, WCA, KRA AEO Green Lane, and Kenya Ports Authority Gate 18 direct integration."
+                category="Accreditations"
                 icon={ShieldCheck}
-                badgeText="Verified Compliance"
+                badgeText="KIFWA • FIATA • WCA Certified"
                 setActiveTab={handleTabChange}
               />
               <MembershipsSection setActiveTab={handleTabChange} />
@@ -221,15 +221,16 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Instant Freight Pricing &"
-                gradientTitle="Personalized Quote Desk"
-                description="Submit your cargo itinerary and receive a personalized quote within no time, backed by zero-demurrage guarantees and direct WhatsApp coordination."
-                category="Quote Generator"
+                title="Transparent Pricing •"
+                gradientTitle="Instant Freight Quotation"
+                description="Calculate estimated tariffs for ocean FCL/LCL, air freight, customs clearance, and Northern Corridor trucking with direct WhatsApp dispatch to +254 728 346457."
+                category="Freight Calculator"
                 icon={Calculator}
-                badgeText="Guaranteed Tariffs"
+                badgeText="Direct WhatsApp Integration"
                 setActiveTab={handleTabChange}
               />
               <QuoteSection setActiveTab={handleTabChange} />
+              <FAQSection setActiveTab={handleTabChange} />
             </motion.div>
           )}
 
@@ -243,15 +244,16 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Connect with Kenya HQ &"
+                title="Headquarters & Desks •"
                 gradientTitle="24/7 Operations Desk"
-                description="Our team at Bellway Business Park, Mombasa Road, Nairobi is ready to support your supply chain across Eastern Africa and worldwide."
-                category="Contact Support"
+                description="Reach our team at Bellway Business Park Nairobi or our Port of Mombasa Gate 18 desk for real-time clearance, tracking, and rate inquiries."
+                category="Get in Touch"
                 icon={PhoneCall}
                 badgeText="+254 728 346457"
                 setActiveTab={handleTabChange}
               />
               <ContactSupport setActiveTab={handleTabChange} />
+              <RegionalFootprintSection setActiveTab={handleTabChange} />
             </motion.div>
           )}
 
@@ -265,15 +267,16 @@ export default function App() {
               transition={{ duration: 0.25 }}
             >
               <PageHeaderBanner
-                title="Kenya & East Africa Shipping"
-                gradientTitle="Customs Procedures FAQ"
-                description="Find authoritative answers on Mombasa Kilindini Port clearance, KRA Simba filings, KEBS CoC, SGR rail tariffs, and EAC cross-border seals."
-                category="Knowledgebase"
+                title="Frequently Asked Questions •"
+                gradientTitle="Customs & Shipping Guide"
+                description="Clear answers on Mombasa Port clearance times, KRA Simba filings, KEBS Certificate of Conformity, SGR rail intermodal, and transit procedures."
+                category="Knowledge Base"
                 icon={HelpCircle}
-                badgeText="FAQ Guidelines"
+                badgeText="Port & Customs Guidelines"
                 setActiveTab={handleTabChange}
               />
               <FAQSection setActiveTab={handleTabChange} />
+              <ContactSupport setActiveTab={handleTabChange} />
             </motion.div>
           )}
 
@@ -282,7 +285,7 @@ export default function App() {
 
       <Footer setActiveTab={handleTabChange} />
       <BackToTop />
-      <FloatingWhatsApp onOpenContact={() => handleTabChange('contact')} />
+      <FloatingWhatsApp />
     </div>
   );
 }

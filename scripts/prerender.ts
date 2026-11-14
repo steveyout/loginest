@@ -404,11 +404,11 @@ function buildHeaderHtml(activeSlug: string): string {
   return `
     <header class="sticky top-0 z-50 bg-[#06122E] text-white border-b border-slate-800 shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-          <img src="/logo.png" alt="Loginest Logistics Africa Logo" class="h-12 w-auto object-contain rounded" />
+        <a href="/" class="flex items-center gap-2.5 sm:gap-3">
+          <img src="/logo.png" alt="Loginest Logistics Africa Logo" class="h-10 sm:h-12 w-auto object-contain rounded" />
           <div class="flex flex-col">
-            <span class="font-extrabold text-xl tracking-tight leading-none text-white font-display">LOGINEST</span>
-            <span class="text-[10px] tracking-widest text-slate-300 font-semibold uppercase mt-0.5">LOGISTICS AFRICA</span>
+            <span class="font-extrabold text-lg sm:text-xl tracking-tight leading-none text-white font-display">LOGINEST</span>
+            <span class="text-[9px] sm:text-[10px] tracking-widest text-slate-300 font-semibold uppercase mt-0.5">LOGISTICS AFRICA</span>
           </div>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -418,7 +418,7 @@ function buildHeaderHtml(activeSlug: string): string {
             </a>
           `).join('')}
         </nav>
-        <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-4">
           <a href="https://wa.me/254728346457" class="px-4 py-2 bg-[#FF5500] hover:bg-[#e04b00] text-white text-xs font-bold rounded-lg transition-colors shadow">
             WhatsApp Support: +254 728 346457
           </a>
