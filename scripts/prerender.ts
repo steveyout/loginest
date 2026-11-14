@@ -587,6 +587,11 @@ Sitemap: ${SITE_URL}/sitemap.xml
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), robotsTxt.trim(), 'utf-8');
   console.log(`[SSR-Prerender] Generated: dist/robots.txt`);
 
+  // 10. Ensure CNAME and .nojekyll in dist
+  fs.writeFileSync(path.join(DIST_DIR, 'CNAME'), 'loginestlogistics.com\n', 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, '.nojekyll'), '', 'utf-8');
+  console.log(`[SSR-Prerender] Generated: dist/CNAME and dist/.nojekyll`);
+
   console.log('[SSR-Prerender] Prerendering complete! Static SSR bundle is fully indexed and ready for GitHub Pages.');
 }
 
