@@ -49,7 +49,7 @@ export const LiveTracker: React.FC<LiveTrackerProps> = ({
   };
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://loginest.logistics/track/${activeShipment.trackingNumber}`);
+    navigator.clipboard.writeText(`https://loginestlogistics.com/track/${activeShipment.trackingNumber}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

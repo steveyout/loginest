@@ -6,6 +6,11 @@
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
     --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --brand-navy: #06122e;
+    --brand-navy-card: #0a193d;
+    --brand-orange: #FF5500;
+    --brand-amber: #FF7700;
+    --brand-blue: #0077D7;
   }
 }
 
@@ -13,74 +18,59 @@
   font-family: var(--font-display);
 }
 
-/* Custom Gradients & Glows for Loginest Brand (Orange & Dark Blue) */
+/* Official Corporate Loginest Brand Button Background */
 .bg-gradient-brand {
-  background: linear-gradient(135deg, #FF6B00 0%, #E05300 50%, #1E3A8A 100%);
+  background: linear-gradient(135deg, #FF5500 0%, #FF6A00 100%);
 }
 
-/* Cross-browser gradient text helpers without box clipping glitches */
+.bg-gradient-brand:hover {
+  background: linear-gradient(135deg, #E64D00 0%, #F55F00 100%);
+}
+
+.bg-gradient-brand-reverse {
+  background: linear-gradient(135deg, #0077D7 0%, #0066B8 100%);
+}
+
+/* Crisp Corporate Typography Helpers */
+.text-brand-orange {
+  color: #FF5500;
+}
+
+.text-brand-blue {
+  color: #0077D7;
+}
+
 .text-gradient-brand {
-  background: linear-gradient(135deg, #FF6B00 0%, #FF8A00 50%, #E05300 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
+  color: #FF5500;
 }
 
-.text-gradient-orange-emerald {
-  background: linear-gradient(135deg, #FF6B00 0%, #F59E0B 50%, #10B981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
-
+/* Clean Corporate Backdrops */
 .bg-gradient-dark-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.15) 0%, rgba(15, 23, 42, 0.95) 70%), #070C18;
+  background: #06122e;
 }
 
 .bg-gradient-light-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.12) 0%, rgba(241, 245, 249, 1) 75%), #F8FAFC;
+  background: #F8FAFC;
 }
 
-.glow-orange {
-  box-shadow: 0 0 25px -5px rgba(255, 107, 0, 0.4);
+/* Subtle, refined elevations */
+.shadow-corporate {
+  box-shadow: 0 4px 20px -2px rgba(6, 18, 46, 0.08), 0 2px 6px -1px rgba(6, 18, 46, 0.04);
 }
 
-.glow-blue {
-  box-shadow: 0 0 25px -5px rgba(30, 58, 138, 0.4);
-}
-
-.border-glow-orange {
-  border-color: rgba(255, 107, 0, 0.4);
-  box-shadow: 0 0 15px rgba(255, 107, 0, 0.15);
+.dark .shadow-corporate {
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
 /* Glassmorphism effects */
 .glass-panel-dark {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(10, 25, 61, 0.92);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 5s ease infinite;
-}
-
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(15, 23, 42, 0.08);
 }
@@ -96,11 +86,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 107, 0, 0.3);
+  background: rgba(100, 116, 139, 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 107, 0, 0.6);
+  background: rgba(255, 85, 0, 0.6);
 }
-

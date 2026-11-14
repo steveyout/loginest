@@ -254,7 +254,7 @@ jobs:
             <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">GOOGLE SEARCH PREVIEW</span>
             <div className="flex items-center gap-2 text-xs text-slate-600">
               <img src="/favicon.svg" className="w-4 h-4" alt="favicon" />
-              <span>https://loginest.logistics</span>
+              <span>https://loginestlogistics.com</span>
             </div>
             <h4 className="text-blue-700 hover:underline font-medium text-base">
               Loginest Logistics | Global Supply Chain & Smart Freight Management
@@ -274,7 +274,7 @@ jobs:
               <div className="space-y-1">
                 <h5 className="font-bold text-sm text-white">Loginest Logistics</h5>
                 <p className="text-xs text-slate-400">Intelligent Global Freight & Telemetry Platform</p>
-                <span className="text-[10px] text-orange-400 font-mono">loginest.logistics</span>
+                <span className="text-[10px] text-orange-400 font-mono">loginestlogistics.com</span>
               </div>
             </div>
           </div>

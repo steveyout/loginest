@@ -3,33 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loginest Logistics Kenya | East Africa Freight & Mombasa Port Clearing</title>
+    <title>Loginest Logistics Africa | Reliable Freight • Global Reach (120+ Countries)</title>
+
+    <!-- SPA Static Hosting URL Slug Decoder -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search && l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Loginest Logistics is East Africa's leading freight logistics provider headquartered in Nairobi, Kenya. Offering Mombasa Port clearing, SGR rail freight, EAC cross-border haulage, and air cargo via JKIA." />
-    <meta name="keywords" content="Loginest Logistics Kenya, Mombasa Port clearing, Nairobi freight forwarder, EAC cross border logistics, Kenya SGR rail freight, JKIA air cargo, East Africa supply chain, KRA customs clearance" />
-    <meta name="author" content="Loginest Logistics Kenya" />
+    <meta name="description" content="Loginest Logistics is an industry-leading freight enterprise headquartered at Bellway Business Park, Nairobi, Kenya. Specializing in Trucking & Commercial Distribution, NVOCC consolidation, 45-year AOG aviation logistics, project cargo & rigging, worldwide freight forwarding in 120+ countries, and zero-demurrage Mombasa Port clearance." />
+    <meta name="keywords" content="Loginest Logistics Africa, Reliable Freight Global Reach, Bellway Business Park Nairobi, Mombasa Port customs clearing, NVOCC consolidation Kenya, AOG logistics JKIA, project cargo heavy rigging East Africa, trucking commercial distribution, KIFWA freight forwarder, KRA AEO clearing agent" />
+    <meta name="author" content="Loginest Logistics Africa" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://loginest.co.ke" />
-    <meta name="theme-color" content="#0B132B" />
+    <link rel="canonical" href="https://loginestlogistics.com/" />
+    <meta name="theme-color" content="#06122E" />
 
-    <!-- Favicon & PWA Icons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/icon.svg" />
+    <!-- Favicon & PWA Icons matching Official Logo -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://loginest.co.ke" />
-    <meta property="og:title" content="Loginest Logistics Kenya | East Africa Smart Freight Gateway" />
-    <meta property="og:description" content="Headquartered in Nairobi, Kenya. Connecting Mombasa Kilindini Port, JKIA Cargo, and EAC corridors across Uganda, Rwanda, South Sudan & Tanzania." />
-    <meta property="og:image" content="/icon.svg" />
+    <meta property="og:url" content="https://loginestlogistics.com/" />
+    <meta property="og:title" content="Loginest Logistics Africa | Reliable Freight • Global Reach" />
+    <meta property="og:description" content="Headquartered at Bellway Business Park, Nairobi. Connected across Mombasa Port, Uganda, Rwanda, Tanzania, Nigeria, South Sudan, and a vetted global network in 120+ countries." />
+    <meta property="og:image" content="https://loginestlogistics.com/logo.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Loginest Logistics Official Logo" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Loginest Logistics Kenya | East Africa Supply Chain Leader" />
-    <meta name="twitter:description" content="Mombasa Port clearing, SGR rail intermodal, cross-border haulage & air cargo services." />
-    <meta name="twitter:image" content="/icon.svg" />
+    <meta name="twitter:title" content="Loginest Logistics Africa | Leader in Freight and Logistics" />
+    <meta name="twitter:description" content="19+ years experience in freight forwarding, customs clearance, NVOCC consolidation, AOG aviation freight, and cross-border trucking." />
+    <meta name="twitter:image" content="https://loginestlogistics.com/logo.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,68 +57,134 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LogisticsService",
-      "name": "Loginest Logistics Kenya",
-      "url": "https://loginest.co.ke",
-      "logo": "https://loginest.co.ke/icon.svg",
-      "image": "https://loginest.co.ke/icon.svg",
-      "description": "Premier East African freight forwarding company headquartered in Nairobi, Kenya. Specializing in Mombasa Port clearance, SGR intermodal transport, cross-border road express, and air cargo.",
-      "telephone": "+254-700-000000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Upper Hill Financial District & JKIA Cargo Terminal",
-        "addressLocality": "Nairobi",
-        "addressRegion": "Nairobi County",
-        "postalCode": "00100",
-        "addressCountry": "KE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-1.286389",
-        "longitude": "36.817223"
-      },
-      "priceRange": "$$",
-      "areaServed": ["Kenya", "Uganda", "Rwanda", "South Sudan", "Tanzania", "Ethiopia", "Democratic Republic of Congo"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "East Africa Freight Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mombasa Port Customs Clearing & Ocean Forwarding"
-            }
+      "@graph": [
+        {
+          "@type": "LogisticsService",
+          "@id": "https://loginestlogistics.com/#organization",
+          "name": "Loginest Logistics Africa",
+          "url": "https://loginestlogistics.com/", 
+          "logo": "https://loginestlogistics.com/logo.png", 
+          "image": "https://loginestlogistics.com/logo.png", 
+          "description": "Premier East African freight solutions provider headquartered at Bellway Business Park, Mombasa Road, Nairobi, Kenya. Providing Trucking & Commercial Distribution, NVOCC consolidation, AOG emergency aviation logistics, project cargo & heavy rigging, and Mombasa Port clearance.",
+          "telephone": "+254-728-346457",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bellway Business Park, Mombasa Road, P.O Box 451-00521",
+            "addressLocality": "Nairobi",
+            "addressRegion": "Nairobi County",
+            "postalCode": "00521",
+            "addressCountry": "KE"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "EAC Cross-Border Heavy Haulage Trucking"
-            }
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-1.3323",
+            "longitude": "36.8845"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SGR Intermodal Rail Freight (Mombasa to Naivasha)"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "JKIA Nairobi Perishable Air Cargo Export"
-            }
+          "priceRange": "$$",
+          "areaServed": ["Kenya", "Uganda", "Rwanda", "South Sudan", "Tanzania", "Nigeria", "Worldwide (120+ Countries)"],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Loginest Core Freight Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Trucking and Commercial Distribution"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "NVOCC (Non-Vessel Operating Common Carrier) & Cargo Consolidation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AOG (Aircraft On Ground) Emergency Aviation Logistics"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Project Logistics and Out-of-Gauge Transit Cargo"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "International Freight Forwarding (Ocean & Air)"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Customs Clearance & Port Operations"
+                }
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://loginestlogistics.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://loginestlogistics.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://loginestlogistics.com/about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Services",
+              "item": "https://loginestlogistics.com/services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Regional Footprint",
+              "item": "https://loginestlogistics.com/regional-footprint"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Memberships",
+              "item": "https://loginestlogistics.com/memberships"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Get a Quote",
+              "item": "https://loginestlogistics.com/quote"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Contact Us",
+              "item": "https://loginestlogistics.com/contact"
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-[#070C18] dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-orange-500 selection:text-white">
+  <body class="bg-slate-50 text-slate-900 dark:bg-[#06122E] dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-[#FF5500] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

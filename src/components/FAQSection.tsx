@@ -4,118 +4,88 @@ import {
   HelpCircle, 
   ChevronDown, 
   Search, 
+  CheckCircle2, 
   Ship, 
+  FileText, 
+  Clock, 
   ShieldCheck, 
-  Train, 
-  Truck, 
-  MessageSquare,
   Sparkles,
-  CheckCircle2,
-  FileText
+  ArrowRight,
+  MessageSquare
 } from 'lucide-react';
 
-interface FAQItem {
-  id: string;
-  category: string;
-  question: string;
-  answer: string;
-  highlights?: string[];
-}
+export const FAQSection: React.FC<{ setActiveTab?: (tab: string) => void }> = ({ setActiveTab }) => {
+  const [openItems, setOpenItems] = useState<string[]>(['faq-1', 'faq-3']);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-interface FAQSectionProps {
-  setActiveTab?: (tab: string) => void;
-}
+  const categories = ['All', 'Mombasa Port', 'Customs Clearance', 'Trucking & Transit', 'AOG & Air Freight', 'Pricing & Tariffs'];
 
-export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [openItems, setOpenItems] = useState<string[]>(['faq-1', 'faq-2']); // Default first two open
-
-  const categories = [
-    'All',
-    'Mombasa Port Clearing',
-    'KRA Customs & Simba',
-    'SGR Rail & Intermodal',
-    'EAC Cross-Border',
-    'Rates & Payments'
-  ];
-
-  const faqs: FAQItem[] = [
+  const faqs = [
     {
       id: 'faq-1',
-      category: 'Mombasa Port Clearing',
-      question: 'How long does container clearing take at Mombasa Kilindini Port?',
-      answer: 'Standard container clearance at Mombasa Kilindini Port takes between 24 to 48 hours once all customs manifest documentation and KRA entry declarations are filed. For AEO (Authorized Economic Operator) pre-cleared cargo, clearing can take under 12 hours.',
+      category: 'Mombasa Port',
+      question: 'How do you guarantee zero-demurrage clearance at Mombasa Kilindini Port?',
+      answer: 'Our direct integration with Kenya Ports Authority (KPA) Gate 18 and Kenya Revenue Authority (KRA) Simba/iCMS enables us to pre-file entries prior to vessel arrival. By lodging import declarations, duty payment assessments, and KEBS CoC verifications before the container touches the wharf, cargo is moved within the free period directly onto SGR rail wagons or bonded haulage trucks.',
       highlights: [
-        'KPA Direct Gate 18 clearing desk',
-        'Pre-arrival documentation filing to eliminate demurrage',
-        'Direct loading onto SGR rail wagons or heavy trucks'
+        'Pre-arrival manifest submission on KRA iCMS',
+        'Direct wharf access at Kilindini Gate 18',
+        '24/7 port operational clearance team'
       ]
     },
     {
       id: 'faq-2',
-      category: 'KRA Customs & Simba',
-      question: 'What documents are required for KRA Customs Clearance in Kenya?',
-      answer: 'For imports into Kenya, KRA requires: Original Bill of Lading (B/L) or Airway Bill (AWB), Commercial Invoice, Packing List, Import Declaration Form (IDF) via Kentrade, Certificate of Conformity (CoC) issued by KEBS-approved inspection agents, and KRA PIN.',
+      category: 'Mombasa Port',
+      question: 'What documents are required to clear commercial cargo at the Port of Mombasa?',
+      answer: 'Standard commercial imports into Kenya require: (1) Original Commercial Invoice & Packing List, (2) Clean Bill of Lading (B/L) or Air Waybill (AWB), (3) Import Declaration Form (IDF) approved on KRA Simba, (4) KEBS Certificate of Conformity (CoC) issued by PVoC inspection agents at origin, and (5) Cargo Cargo Tracking Note (where applicable).',
       highlights: [
-        'Import Declaration Form (IDF) processing',
-        'KEBS PVOC (Pre-Export Verification of Conformity)',
-        'KRA iTax & Simba System 2026 integration'
+        'Electronic IDF approval processing',
+        'PVoC / KEBS compliance facilitation',
+        'Digital Bill of Lading endorsement'
       ]
     },
     {
       id: 'faq-3',
-      category: 'SGR Rail & Intermodal',
-      question: 'How does SGR Rail Freight work from Mombasa to Nairobi or Naivasha Dry Port?',
-      answer: 'Once your ocean container is offloaded at Mombasa Kilindini Port, it is directly transferred to the SGR freight terminal. Block trains transport containers to Embakasi ICD in Nairobi (12-hour transit) or Naivasha Inland Container Depot for onward transport to Uganda and Rwanda.',
+      category: 'AOG & Air Freight',
+      question: 'How fast can Loginest deliver urgent Aircraft on Ground (AOG) spare parts?',
+      answer: 'With over 45 years combined aviation logistics experience based at JKIA Nairobi, our 24/7 emergency dispatch desk executes emergency tarmac clearances and on-board courier hand-carries within 2 to 6 hours of flight arrival. We maintain direct access to airside bonded warehouses and coordinate immediately with the Kenya Civil Aviation Authority (KCAA).',
       highlights: [
-        '8 daily scheduled SGR block trains',
-        'Fixed non-fluctuating intermodal freight tariffs',
-        'Saves up to 35% compared to long-distance road haulage'
+        '24/7/365 dedicated AOG emergency hotline',
+        '2 - 6 hours tarmac release SLA at JKIA',
+        'On-Board Courier (OBC) capability worldwide'
       ]
     },
     {
       id: 'faq-4',
-      category: 'EAC Cross-Border',
-      question: 'Do you handle cross-border freight transit to Uganda, Rwanda, and South Sudan?',
-      answer: 'Yes! Loginest Kenya operates heavy haulage trucks along the Great Lakes Northern Corridor. We manage ECTS (Electronic Cargo Tracking System) customs seals, border transit documentation at Busia, Malaba, Elegu, and Kagitumba, ensuring hassle-free cross-border movement.',
+      category: 'Customs Clearance',
+      question: 'What is KRA AEO (Authorized Economic Operator) status and how does it help my business?',
+      answer: 'Loginest operates under KRA Authorized Economic Operator (AEO Green Lane) protocols. This elite status allows our shipments to bypass regular customs physical inspection chokepoints, enjoy expedited post-clearance audits, and experience zero port storage delays, cutting transit times by up to 60%.',
       highlights: [
-        'ECTS electronic cargo seal tracking',
-        'Single Customs Territory (SCT) single-window clearing',
-        'Dedicated border agents at Malaba, Busia & Elegu'
+        'Green Channel direct clearance',
+        'Priority vessel discharge and loading',
+        'Reduced customs inspection intervention'
       ]
     },
     {
       id: 'faq-5',
-      category: 'Rates & Payments',
-      question: 'How are freight rate quotes calculated and what payment methods do you accept?',
-      answer: 'Freight rates are based on volume (CBM), gross weight (KG), origin/destination corridor, and required handling (e.g., reefer cold-chain, hazardous cargo). We accept M-Pesa Business Till, Bank Wire (KES, USD, EUR), and EAC local currency transfers.',
+      category: 'Trucking & Transit',
+      question: 'Do you provide cross-border transport across Uganda, Rwanda, South Sudan, and Tanzania?',
+      answer: 'Yes. We operate a fleet of flatbeds, skeletal semi-trailers, low-loaders, and box bodies operating across the Northern Corridor (Mombasa ➔ Nairobi ➔ Malaba ➔ Kampala ➔ Kigali ➔ Juba) and Central Corridor to Tanzania. Every vehicle is fitted with certified Electronic Cargo Tracking Seals (ECTS) with GPS telemetry.',
       highlights: [
-        'Instant online rate calculation',
-        'Transparent itemized invoices with zero hidden demurrage fees',
-        'M-Pesa Express & Corporate Bank Wire options'
+        'ECTS real-time EAC satellite tracking',
+        'Single Customs Territory transit bonds',
+        'Digital Proof of Delivery (POD) upon arrival'
       ]
     },
     {
       id: 'faq-6',
-      category: 'Mombasa Port Clearing',
-      question: 'What is Demurrage and how does Loginest prevent extra storage charges?',
-      answer: 'Demurrage occurs when shipping line containers remain at the port terminal beyond the allowed free days (typically 7 to 14 days). Loginest prevents demurrage by initiating pre-arrival customs entry filings up to 5 days before the vessel berths at Mombasa.',
+      category: 'Pricing & Tariffs',
+      question: 'How does NVOCC consolidation save costs for small and medium enterprises?',
+      answer: 'Through our NVOCC consolidation hubs in Shanghai, Ningbo, Dubai, and Rotterdam, we combine LCL (Less than Container Load) shipments from multiple importers into shared containers. You only pay for the exact volume (CBM) or weight you utilize, avoiding the prohibitive cost of chartering an entire 20ft or 40ft container.',
       highlights: [
-        '5-day pre-arrival document audit',
-        'Guaranteed zero-demurrage dispatch workflow',
-        'Free 5-day storage at our Mombasa bonded warehouse'
-      ]
-    },
-    {
-      id: 'faq-7',
-      category: 'KRA Customs & Simba',
-      question: 'Can Loginest handle bonded warehouse storage and duty-free transit?',
-      answer: 'Yes. We provide bonded warehousing in Nairobi (JKIA & Industrial Area) and Mombasa (Shimanzi ICD). Transit cargo destined for East African neighbours (Uganda, Rwanda, DRC) is moved under KRA bonded security without paying Kenya import duties.',
-      highlights: [
-        'KRA Bonded Warehouse License',
-        'Duty-suspension transit clearance for EAC destinations',
-        'Temperature-controlled pharmaceutical & food storage'
+        'Pay strictly per CBM utilized',
+        'Regular weekly sailings from global ports',
+        'Direct deconsolidation at ICD Nairobi'
       ]
     }
   ];
@@ -136,9 +106,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
 
   return (
     <section id="faq" className="py-16 lg:py-24 relative overflow-hidden bg-slate-50 dark:bg-[#070C18]">
-      {/* Background Radial Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-500/10 dark:bg-orange-500/5 blur-[160px] rounded-full pointer-events-none" />
-
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
         
         {/* Section Header */}
@@ -147,7 +114,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700 text-xs font-semibold uppercase tracking-wider"
           >
             <HelpCircle className="w-3.5 h-3.5 text-orange-500" />
             <span>Frequently Asked Questions</span>
@@ -161,7 +128,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
             className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight break-words"
           >
             Kenya & East Africa Shipping{' '}
-            <span className="text-gradient-orange-emerald font-extrabold block sm:inline mt-1 sm:mt-0">
+            <span className="text-orange-600 dark:text-orange-500 font-extrabold block sm:inline mt-1 sm:mt-0">
               Customs Guide
             </span>
           </motion.h2>
@@ -188,7 +155,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions (e.g. KRA, Mombasa, SGR, Demurrage)..."
-              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-white dark:bg-[#0B132B] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm outline-none focus:border-orange-500 shadow-md transition-colors"
+              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-white dark:bg-[#0B132B] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm outline-none focus:border-orange-500 shadow-sm transition-colors"
             />
             {searchQuery && (
               <button
@@ -208,7 +175,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-md'
+                    ? 'bg-orange-500 text-white shadow-sm'
                     : 'bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
@@ -234,8 +201,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                   transition={{ duration: 0.35, delay: idx * 0.05 }}
                   className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen 
-                      ? 'bg-white dark:bg-[#0B132B] border-orange-500/40 shadow-xl' 
-                      : 'bg-white/80 dark:bg-[#0B132B]/80 border-slate-200/80 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700'
+                      ? 'bg-white dark:bg-[#0B132B] border-orange-500/50 shadow-sm' 
+                      : 'bg-white/80 dark:bg-[#0B132B]/80 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   <button
@@ -243,7 +210,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                     className="w-full p-4 sm:p-5 text-left flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                      <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 shrink-0 w-fit">
+                      <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shrink-0 w-fit">
                         {faq.category}
                       </span>
                       <h3 className="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug break-words">
@@ -266,18 +233,18 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-5 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800/80 space-y-4">
+                        <div className="px-5 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 space-y-4">
                           <p className="leading-relaxed mt-3">{faq.answer}</p>
 
                           {faq.highlights && faq.highlights.length > 0 && (
-                            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 space-y-2">
+                            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-2">
                               <span className="text-[10px] font-mono font-bold text-orange-500 uppercase tracking-wider block">
                                 Key Standard Operational Procedure
                               </span>
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                 {faq.highlights.map((h, i) => (
                                   <div key={i} className="flex items-center gap-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                                     <span>{h}</span>
                                   </div>
                                 ))}
@@ -306,10 +273,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
         </div>
 
         {/* WhatsApp Helpdesk Callout Box */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-900 via-slate-900 to-slate-950 text-white border border-emerald-500/30 shadow-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="p-6 sm:p-8 rounded-3xl bg-[#06122e] text-white border border-slate-800 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="flex items-center gap-2 text-orange-400 text-xs font-mono font-bold">
+              <span className="w-2 h-2 rounded-full bg-orange-400" />
               Have a Specific Logistics or Customs Inquiry?
             </div>
             <h3 className="font-display text-xl font-bold text-white">Ask Our Kenya Customs Desk Direct on WhatsApp</h3>
@@ -321,7 +288,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ setActiveTab }) => {
           {setActiveTab && (
             <button
               onClick={() => setActiveTab('contact')}
-              className="py-3 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+              className="py-3 px-6 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Contact WhatsApp Support</span>

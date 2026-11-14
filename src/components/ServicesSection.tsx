@@ -6,17 +6,19 @@ import {
   Plane, 
   Train, 
   ShieldCheck, 
-  Thermometer, 
   ArrowRight, 
   CheckCircle2, 
-  Sparkles, 
   Clock, 
   MapPin, 
-  ChevronRight,
-  Zap,
-  Globe2,
-  X,
-  MessageSquare
+  Zap, 
+  Globe2, 
+  X, 
+  Package, 
+  Layers, 
+  AlertTriangle, 
+  Anchor, 
+  Compass,
+  FileText
 } from 'lucide-react';
 
 // Import generated images
@@ -37,149 +39,146 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
   const services = [
     {
-      id: 'mombasa-port',
-      icon: Ship,
-      image: mombasaPortImg,
-      title: 'Mombasa Port Clearing & Ocean Forwarding',
-      subtitle: 'Kilindini Harbor & KPA Direct Interface',
-      badge: 'Most Popular',
-      badgeColor: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
-      gradient: 'from-blue-600 to-indigo-700',
-      description: 'Zero-demurrage clearing at Mombasa Port with instant transfer to Standard Gauge Railway (SGR) rail wagons or heavy haulage trailers.',
-      highlights: [
-        'KPA & KRA Single Window Direct Integration',
-        '24/7 Priority Discharge at Kilindini Gate 18',
-        'Bonded Container Storage & Break-Bulk',
-        'Direct SGR Rail Wagons to Nairobi & Naivasha'
-      ],
-      transitTime: '24-48 Hours Port Clear',
-      coverage: 'Mombasa Port ➔ Worldwide'
-    },
-    {
-      id: 'cross-border-road',
+      id: 'trucking-distribution',
       icon: Truck,
+      title: 'Trucking & Commercial Distribution',
       image: eastAfricaTruckingImg,
-      title: 'East Africa Cross-Border Road Freight',
-      subtitle: 'Northern Corridor Highway Network',
-      badge: 'EAC Express',
-      badgeColor: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
-      gradient: 'from-orange-500 to-amber-600',
-      description: 'Heavy duty fleet servicing Kenya, Uganda, Rwanda, South Sudan, Tanzania, and DRC with Electronic Cargo Tracking Seals (ECTS).',
+      subtitle: 'Cost-efficient fleet haulage without breaking the bank',
+      badge: 'Core Fleet',
+      quote: 'Use our trucks to get your cargo to your destination without breaking the bank. We have the perfect truck for your exact payload.',
+      description:
+        'From high-cube container semi-trailers to agile urban distribution fleets, we provide dependable road freight across Kenya and the Northern Corridor. Every truck is equipped with real-time GPS telemetry and Electronic Cargo Tracking Seals (ECTS).',
       highlights: [
-        'Real-time GPS + Electronic Cargo Seal Security',
-        '45-Min Border Crossing at Malaba & Busia',
-        'Multi-Axle Flatbeds & Container Semi-Trailers',
-        'Escorted Out-of-Gauge (OOG) Heavy Machinery'
+        'Versatile fleet: Flatbeds, Skeletals, Box-bodies, and Low-loaders',
+        'Northern Corridor express routes to Uganda, Rwanda, South Sudan & Tanzania',
+        'Real-time GPS tracking & tamper-proof electronic cargo seals',
+        'Store-door final mile deliveries with verified digital POD'
       ],
-      transitTime: '2-4 Days Regional',
-      coverage: 'Nairobi ➔ Kampala, Kigali, Juba, Dar'
+      transitTime: '24 - 72 Hours Regional',
+      coverage: 'Kenya ➔ Uganda, Rwanda, Tanzania, South Sudan'
     },
     {
-      id: 'jkia-air-cargo',
+      id: 'nvocc-consolidation',
+      icon: Layers,
+      title: 'NVOCC & Cargo Consolidation',
+      image: mombasaPortImg,
+      subtitle: 'Specialized LCL & FCL consolidation with regular sailings',
+      badge: 'NVOCC Leader',
+      quote: 'We offer consolidated service packages like LCL (Less than Container Load), FCL (Full Container Load), stuffing and sailing.',
+      description:
+        'As a licensed Non-Vessel Operating Common Carrier, we consolidate consignments for multiple shippers to optimize container volume, drastically lowering ocean tariffs for small-to-medium businesses and high-frequency traders.',
+      highlights: [
+        'Dedicated LCL consolidation hubs in Shanghai, Ningbo, Dubai & Rotterdam',
+        'Weekly scheduled container sailings to Port of Mombasa',
+        'Professional container stuffing, securing, and deconsolidation at ICD Nairobi',
+        'Single Combined Transport Bill of Lading (FBL) issuing'
+      ],
+      transitTime: 'Scheduled Weekly Sailings',
+      coverage: 'Global Hubs ➔ Mombasa Port & ICD Embakasi'
+    },
+    {
+      id: 'aog-logistics',
       icon: Plane,
-      image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
-      title: 'JKIA Nairobi Air Freight & Perishable Express',
-      subtitle: 'East Africa Aviation Cargo Gateway',
-      badge: 'Priority Air',
-      badgeColor: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
-      gradient: 'from-sky-500 to-blue-600',
-      description: 'Express air charter and scheduled cargo handling via Jomo Kenyatta International Airport (JKIA) for high-value & perishable produce.',
-      highlights: [
-        'Cold-Chain (+2°C to +8°C) Pharma & Flower Vaults',
-        'Customs Express Duty Release in 4 Hours',
-        'Charter Flights to Europe, Middle East & Asia',
-        'HACCP & IATA Certified Cargo Specialists'
-      ],
-      transitTime: '6-12 Hours Flight Dispatch',
-      coverage: 'JKIA Nairobi ➔ Global Destinations'
-    },
-    {
-      id: 'sgr-rail-freight',
-      icon: Train,
-      image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80',
-      title: 'SGR Intermodal Rail Freight',
-      subtitle: 'Port of Mombasa ➔ Naivasha Dry Port',
-      badge: 'Eco-Friendly Rail',
-      badgeColor: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
-      gradient: 'from-emerald-600 to-teal-700',
-      description: 'Fast, secure containerized rail transport eliminating highway congestion between Mombasa Port and Nairobi/Naivasha Inland Container Depots.',
-      highlights: [
-        '8 Daily Block Trains (Up to 108 TEUs per train)',
-        '12-Hour Guaranteed Transit Time from Port',
-        'Direct Transfer to Transit Trucks for Uganda/Rwanda',
-        '62% Carbon Footprint Reduction vs Road'
-      ],
-      transitTime: '12 Hours Fixed Schedule',
-      coverage: 'Mombasa ➔ Nairobi ICD ➔ Naivasha'
-    },
-    {
-      id: 'eac-customs',
-      icon: ShieldCheck,
+      title: 'AOG (Aircraft On Ground) Logistics',
       image: nairobiHubImg,
-      title: 'EAC Customs & Duty Brokerage',
-      subtitle: 'KRA SIMBA / iTax Authorized Economic Operator',
-      badge: '100% Compliant',
-      badgeColor: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
-      gradient: 'from-purple-600 to-indigo-800',
-      description: 'Fully automated Kenya Revenue Authority (KRA) and East African Single Customs Territory documentation for seamless tariff assessment.',
+      subtitle: 'Critical 24/7 emergency aviation supply chain',
+      badge: 'Aviation Critical',
+      quote: 'Our team has a combined experience of 45 years managing AOG logistics for the busiest airlines in this region.',
+      description:
+        'When an aircraft is grounded, every hour costs thousands of dollars. Our specialized AOG division provides round-the-clock emergency dispatch for jet engines, avionics, landing gears, and flight-critical replacement components.',
       highlights: [
-        'AEO Status for Expedited Green-Channel Processing',
-        'Automated Duty & Tariff Calculator Assistance',
-        'Transit Bond Issuance & EAC Tax Exemption Filings',
-        'Specialized Import/Export Certificate Approvals'
+        '45+ years combined aviation freight leadership at JKIA Nairobi',
+        '24/7/365 immediate emergency response desk & tarmac escorts',
+        'Priority air charter space & express customs tarmac clearance',
+        'Hand-carry courier (On-Board Courier) for urgent avionics'
       ],
-      transitTime: 'Instant Automated Filing',
-      coverage: 'All EAC Border Outposts & Airports'
+      transitTime: '2 - 6 Hours Emergency Release',
+      coverage: 'JKIA Nairobi ➔ Global Airline Network'
     },
     {
-      id: 'cold-chain-agri',
-      icon: Thermometer,
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-      title: 'Cold-Chain Agri-Export Logistics',
-      subtitle: 'Kenyan Tea, Flowers, Avocados & Fresh Produce',
-      badge: 'Temp-Controlled',
-      badgeColor: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
-      gradient: 'from-teal-500 to-cyan-600',
-      description: 'End-to-end refrigerated reefer logistics from Rift Valley farms to Mombasa Port reefer racks and JKIA air cargo decks.',
+      id: 'project-logistics',
+      icon: Compass,
+      title: 'Project Logistics & Transit Cargo',
+      image: eastAfricaTruckingImg,
+      subtitle: 'Heavy lift, out-of-gauge & complex industrial rigging',
+      badge: 'Heavy Lift',
+      quote: 'We have developed capacity to handle out-of-gauge project cargo in East Africa, backed by complex rigging expertise.',
+      description:
+        'Custom engineering solutions for oversized and ultra-heavy cargo supporting energy, mining, power generation, and infrastructural developments across Eastern Africa. Full civil route surveys and hydraulic modular trailers.',
       highlights: [
-        'Continuous IoT Temperature Monitoring Loggers',
-        'Reefer Trailer Units with Battery Backups',
-        'Phytosanitary & KEPHIS Certification Support',
-        'Dedicated Flower & Fruit Export Corridors'
+        'Hydraulic multi-axle modular trailers & specialized low-bed carriers',
+        'Comprehensive route surveys: Bridge stress checks & overhead obstacle clearance',
+        'Industrial rigging, jacking, and skidding for turbines & heavy transformers',
+        'Government permits, police escorts, and cross-border transit bonding'
       ],
-      transitTime: 'Controlled Cold Sequence',
-      coverage: 'Farm-Gate ➔ Global Supermarkets'
+      transitTime: 'Project-Specific Staged Dispatch',
+      coverage: 'Mombasa Port ➔ Regional Infrastructure Sites'
+    },
+    {
+      id: 'freight-forwarding',
+      icon: Globe2,
+      title: 'International Freight Forwarding',
+      image: mombasaPortImg,
+      subtitle: 'Global door-to-door network across 120+ countries',
+      badge: 'Global Forwarding',
+      quote: 'We understand importer needs through years of engagement with overseas partners and a trusted network of agents in 120+ countries.',
+      description:
+        'Comprehensive multi-modal freight management. From point of manufacture in China, Europe, India, or the USA, we manage ocean vessel chartering, priority air cargo allocations, and seamless overland connections.',
+      highlights: [
+        'Vetted agency representation in 120+ countries worldwide',
+        'Direct contracts with leading ocean liners: Maersk, CMA CGM, MSC',
+        'IATA-certified air freight allocations at major international airports',
+        'End-to-end cargo insurance, letter of credit (LC) compliance & tracking'
+      ],
+      transitTime: 'Ocean: 18 - 30 Days | Air: 2 - 4 Days',
+      coverage: 'Worldwide Origin ➔ Port of Mombasa & East Africa'
+    },
+    {
+      id: 'customs-clearance',
+      icon: ShieldCheck,
+      title: 'Customs Clearance & Port Operations',
+      image: nairobiHubImg,
+      subtitle: 'Direct KPA Gate 18 desk & KRA iCMS zero-demurrage clearance',
+      badge: 'Port Specialist',
+      quote: 'With our experienced staff and strong stakeholder relationships, we handle all types of Customs clearance at the ports with precision.',
+      description:
+        'Decades of operational alignment with Kenya Ports Authority (KPA), Kenya Revenue Authority (KRA), KEBS, and Port Health. We pre-file entry documentation to clear cargo before vessel discharge, eliminating demurrage charges.',
+      highlights: [
+        'Pre-arrival electronic manifest filing on KRA Simba 2026 / iCMS',
+        'Dedicated operational offices inside Mombasa Port Gate 18 & ICD Embakasi',
+        'Expedited handling of KEBS Certificate of Conformity (CoC) & IDF permits',
+        'Immediate direct loading onto SGR rail wagons or heavy haulage trailers'
+      ],
+      transitTime: '24 - 48 Hours Port Release',
+      coverage: 'Port of Mombasa, ICD Embakasi, Naivasha, JKIA Cargo'
     }
   ];
 
   const handleSelectService = (service: any) => {
-    if (onBookRate) {
-      onBookRate({ serviceType: service.title });
-    }
+    setSelectedService(service);
+  };
+
+  const handleBookSelected = (service: any) => {
+    setSelectedService(null);
     if (setActiveTab) {
-      setActiveTab('calculator');
+      setActiveTab('quote');
     }
   };
 
   return (
     <section id="services" className="py-20 lg:py-28 relative overflow-hidden bg-slate-50 dark:bg-[#070C18]">
-      
-      {/* Background Decorative Graphic Elements */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 dark:bg-orange-500/10 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/10 blur-[130px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
-        {/* Section Title */}
+        {/* Section Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700 text-xs font-semibold uppercase tracking-wider"
           >
-            <Sparkles className="w-3.5 h-3.5 text-orange-500 animate-pulse" />
-            <span>East Africa Logistics Services</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-orange-500" />
+            <span>Comprehensive Freight Operations</span>
           </motion.div>
 
           <motion.h2 
@@ -187,11 +186,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+            className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight"
           >
-            End-to-End Solutions Powered From{' '}
-            <span className="text-gradient-brand font-extrabold">
-              Nairobi & Mombasa
+            Our Core Services:{' '}
+            <span className="text-orange-600 dark:text-orange-500 font-extrabold">
+              Engineered for Velocity & Reliability
             </span>
           </motion.h2>
 
@@ -199,219 +198,207 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.15 }}
             className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed"
           >
-            From Mombasa ocean clearing to cross-border highway transport across Uganda and Rwanda, explore our full spectrum of logistics capabilities.
+            From specialized aviation AOG logistics and consolidated NVOCC sailings to heavy project rigging and fast-track Mombasa port clearance.
           </motion.p>
         </div>
 
-        {/* Enticing Services Cards Grid */}
+        {/* 6 Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => {
-            const Icon = service.icon;
+            const ServiceIcon = service.icon;
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 40, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: (idx % 3) * 0.1, ease: 'easeOut' }}
-                whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                className="group relative rounded-3xl bg-white dark:bg-[#0B132B] border border-slate-200/80 dark:border-slate-800/80 shadow-lg hover:shadow-2xl hover:border-orange-500/40 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                whileHover={{ y: -5 }}
+                className="rounded-3xl bg-white dark:bg-[#0B132B] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
               >
-                {/* Image Banner Header */}
-                <div className="relative h-48 w-full overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                  
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-lg`}>
-                      <Icon className="w-5 h-5" />
+                <div>
+                  {/* Image Header with Badge */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent" />
+                    
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 rounded-full text-xs font-mono font-medium backdrop-blur-md bg-slate-900/80 text-white border border-slate-700/80">
+                        {service.badge}
+                      </span>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold font-mono border backdrop-blur-md bg-slate-950/60 ${service.badgeColor}`}>
-                      {service.badge}
-                    </span>
+
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                      <div className="w-10 h-10 rounded-xl bg-slate-900/90 border border-slate-700 text-orange-400 flex items-center justify-center shadow-md">
+                        <ServiceIcon className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono font-medium px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md border border-white/20">
+                        {service.transitTime}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <p className="text-[11px] text-orange-400 font-mono font-semibold uppercase tracking-wider">
-                      {service.subtitle}
-                    </p>
-                  </div>
-                </div>
+                  {/* Body Content */}
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="space-y-1">
+                      <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs font-medium text-orange-600 dark:text-orange-400 font-mono">
+                        {service.subtitle}
+                      </p>
+                    </div>
 
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                  <div>
-                    {/* Title */}
-                    <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
-                      {service.title}
-                    </h3>
+                    {/* Quotation highlight */}
+                    <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-300 italic">
+                      "{service.quote}"
+                    </div>
 
-                    <p className="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
 
-                    {/* Feature Checklist */}
-                    <ul className="mt-4 space-y-2">
-                      {service.highlights.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
+                    {/* Bullet Highlights Preview */}
+                    <div className="pt-2 space-y-2">
+                      {service.highlights.slice(0, 2).map((hl, hli) => (
+                        <div key={hli} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                          <span className="line-clamp-1">{hl}</span>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-
-                  {/* Footer Info & Action */}
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 space-y-3">
-                    <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-orange-500" />
-                        {service.transitTime}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-orange-500" />
-                        {service.coverage}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => handleSelectService(service)}
-                        className="flex-1 py-2.5 px-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs hover:bg-orange-600 dark:hover:bg-orange-500 dark:hover:text-white transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
-                      >
-                        <span>Calculate Rate</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-
-                      <button
-                        onClick={() => setSelectedService(service)}
-                        className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors cursor-pointer"
-                        title="View Full Details"
-                      >
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
                     </div>
                   </div>
                 </div>
 
+                {/* Card Footer Actions */}
+                <div className="p-6 sm:p-7 pt-0 border-t border-slate-100 dark:border-slate-800/80 mt-4 flex items-center justify-between gap-3">
+                  <button
+                    onClick={() => handleSelectService(service)}
+                    className="text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 flex items-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <span>Full Specifications</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      if (setActiveTab) setActiveTab('quote');
+                    }}
+                    className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-orange-500 text-slate-800 hover:text-white dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-orange-500 dark:hover:text-white font-bold text-xs transition-all cursor-pointer border border-slate-200 dark:border-slate-700"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* Bottom CTA Banner */}
-        <motion.div 
-          initial={{ opacity: 0, y: 35, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="rounded-3xl p-8 sm:p-10 bg-gradient-brand text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden"
-        >
-          <div className="space-y-2 text-center md:text-left relative z-10 max-w-2xl">
-            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/20 text-white border border-white/30 uppercase tracking-widest inline-block">
-              Custom Logistics Contract
-            </span>
-            <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white">
-              Need Tailored Logistics for Enterprise EAC Trade?
-            </h3>
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-              Connect with our Nairobi Headquarters dedicated logistics architects for bulk fleet reservations, port clearing tenders, and specialized reefer exports.
-            </p>
-          </div>
-
-          <div className="relative z-10 flex items-center gap-3 shrink-0">
-            {setActiveTab && (
-              <button
-                onClick={() => setActiveTab('contact')}
-                className="px-6 py-3.5 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-500 transition-all shadow-xl flex items-center gap-2 cursor-pointer"
-              >
-                <MessageSquare className="w-4 h-4 text-white" />
-                <span>Contact HQ on WhatsApp</span>
-              </button>
-            )}
-          </div>
-        </motion.div>
-
       </div>
 
-      {/* Service Detail Modal */}
+      {/* Interactive Detail Modal */}
       <AnimatePresence>
         {selectedService && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white dark:bg-[#0B132B] border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 max-w-xl w-full shadow-2xl relative space-y-6 text-slate-900 dark:text-white"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="relative w-full max-w-3xl rounded-3xl bg-white dark:bg-[#0B132B] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="flex items-center gap-3">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${selectedService.gradient} flex items-center justify-center text-white shadow-lg`}>
-                  {React.createElement(selectedService.icon, { className: 'w-6 h-6' })}
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-xl">{selectedService.title}</h3>
-                  <p className="text-xs text-orange-500 font-mono font-semibold">{selectedService.subtitle}</p>
-                </div>
-              </div>
-
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                {selectedService.description}
-              </p>
-
-              <div className="space-y-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">Service Capabilities & SLA</h4>
-                <div className="space-y-2">
-                  {selectedService.highlights.map((h: string, idx: number) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-slate-700 dark:text-slate-200">
-                      <CheckCircle2 className="w-4 h-4 text-orange-500" />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-3 text-xs font-mono">
-                <div>
-                  <span className="text-slate-500 block text-[10px] uppercase">Average Transit Time</span>
-                  <span className="font-bold text-slate-900 dark:text-white">{selectedService.transitTime}</span>
-                </div>
-                <div>
-                  <span className="text-slate-500 block text-[10px] uppercase">Operating Corridor</span>
-                  <span className="font-bold text-slate-900 dark:text-white">{selectedService.coverage}</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 pt-2">
+              {/* Modal Header Image */}
+              <div className="relative h-48 sm:h-56 overflow-hidden shrink-0">
+                <img 
+                  src={selectedService.image} 
+                  alt={selectedService.title} 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                
                 <button
-                  onClick={() => {
-                    handleSelectService(selectedService);
-                    setSelectedService(null);
-                  }}
-                  className="w-full py-3 rounded-xl bg-gradient-brand text-white font-bold text-xs hover:brightness-110 shadow-lg transition-all cursor-pointer"
+                  onClick={() => setSelectedService(null)}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white transition-all cursor-pointer"
                 >
-                  Request Rate Quote
+                  <X className="w-5 h-5" />
+                </button>
+
+                <div className="absolute bottom-4 left-6 right-6 text-white space-y-1">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-slate-900/80 border border-slate-700 text-white">
+                    {selectedService.badge}
+                  </span>
+                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
+                    {selectedService.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Modal Scrollable Body */}
+              <div className="p-6 sm:p-8 space-y-6 overflow-y-auto">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border-l-4 border-orange-500 text-sm font-medium italic text-slate-700 dark:text-slate-300">
+                  "{selectedService.quote}"
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold">Operational Overview</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {selectedService.description}
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold">Detailed Capabilities & Guarantees</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {selectedService.highlights.map((item: string, i: number) => (
+                      <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 text-xs text-slate-700 dark:text-slate-300">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-xs">
+                  <div>
+                    <span className="text-slate-500 font-mono block">Standard Transit SLA</span>
+                    <span className="font-bold text-slate-900 dark:text-white text-sm">{selectedService.transitTime}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500 font-mono block">Active Routing Corridor</span>
+                    <span className="font-bold text-slate-900 dark:text-white text-sm">{selectedService.coverage}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="p-5 sm:p-6 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="px-4 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-xs font-bold transition-colors cursor-pointer"
+                >
+                  Close Window
+                </button>
+                <button
+                  onClick={() => handleBookSelected(selectedService)}
+                  className="px-6 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Request Rate for this Service</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
+
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-
     </section>
   );
 };
-

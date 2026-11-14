@@ -8,8 +8,8 @@ interface FloatingWhatsAppProps {
 
 export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenContact }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const whatsappNumber = '254700000000'; // Kenya HQ number format
-  const defaultMessage = 'Hello Loginest Kenya, I would like to inquire about freight rates and Mombasa port clearing.';
+  const whatsappNumber = '254728346457'; // Kenya HQ number format (+254 728 346457)
+  const defaultMessage = 'Hello Loginest Kenya, I would like to inquire about freight rates, NVOCC consolidation, and Mombasa port clearing.';
 
   // 3D Tilt Motion setup
   const x = useMotionValue(0);
@@ -95,7 +95,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenContac
               <div className="p-3 rounded-2xl bg-slate-800/80 border border-slate-700/60 text-xs text-slate-200 space-y-1">
                 <p className="font-semibold text-emerald-400">👋 Jambo! Welcome to Loginest Logistics.</p>
                 <p className="text-slate-300 leading-relaxed text-[11px]">
-                  Need an instant quote for Mombasa Port clearance, SGR Rail booking, or EAC cross-border haulage?
+                  Need an instant quote for Mombasa Port clearance, NVOCC consolidation, or EAC cross-border haulage?
                 </p>
               </div>
 
@@ -110,10 +110,10 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenContac
                 </button>
 
                 <button
-                  onClick={() => handleDirectChat('Hello, I want to book SGR rail container transport from Mombasa to Nairobi ICD.')}
+                  onClick={() => handleDirectChat('Hello, I want to book SGR rail container transport or NVOCC consolidation.')}
                   className="w-full p-2.5 rounded-xl bg-slate-800 hover:bg-emerald-600/30 text-left text-xs font-medium text-slate-200 hover:text-white border border-slate-700/60 hover:border-emerald-500/50 transition-all flex items-center justify-between cursor-pointer group"
                 >
-                  <span>🚂 SGR Rail Freight Tariff</span>
+                  <span>🚂 NVOCC & Consolidation</span>
                   <Send className="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-0.5 transition-transform" />
                 </button>
 
